@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Decryption</title>
+
+</head>
+
+<body>
+
+    <div style="background-image: url('https://i.pinimg.com/originals/c8/9e/68/c89e6809085102dcfa828d4a165a1399.jpg');">
+	<img  class="ml-2 mt-2 rounded-circle"src="https://i.imgur.com/UAeEKyX.jpg" alt="Logo" width="220" height="160" />	
+	
+	<h1 class=" mt-2 ml-2"><b>Data Encryption</b></h1>
+    	<h4 class="ml-2">Save your privacy using your very own encryption tool</h4>
+	<hr />				<!-- For creating a horizontal line -->
+	<h1  class="display-4" style="text-align:center"><b>Data Decrypter</b></h1>
+	<h4 style="text-align:center"> Enter your encrypted data or upload text file </h4>
+	<form>
+	<br>
+	<pre class="ml-2" style="font-size:1.2em">Product of primes(n):<input type="number" class="ml-2 border border-dark" id="n" name="pop" size="15" maxlength="30" /></pre>
+	<p  class="ml-2" style="font-size:1em">Decryption Key(public key)d:            <input type="number" class="ml-4 border border-dark" id="dekey" name="deckey" size="15" maxlength="30" /></p>
+	<textarea  class="ml-2 mt-2 border border-dark" id="inputtxt" name="inputtext" rows="6" cols="50" placeholder="Enter your text here.."></textarea>
+  	<br>	
+	<pre style="font-size:1.3em">	     OR</pre>
+	<input type="file" class="ml-2" id= "inputfile" name="inputfile" /><br><br>
+	<input type="button" class="ml-2 btn btn-primary" value="Decrypt" onclick="decrypt();window.location.href = '#output';"><br>			
+	</form>
+	<h2>The Decrypted Text is</h2>
+	<p id="output" style="font-size:1.3em"></p>
+
+    	<!-- <a href="Encryption page.html">Page 2</a> -->
+
+   <script >  
+	function decrypt()
+    { 
+        
+    if(document.getElementById("inputfile").files.length!=0)			
+      {
+      	var n,dekey,i;
+   	var en1=[];  //it is a constant string since reading from document
+	n=document.getElementById("n").value;
+    	dekey=document.getElementById("dekey").value;
+        
+        var fileToLoad = document.getElementById("inputfile").files[0];
+   	var fileReader = new FileReader();
+  	fileReader.onload = function(fileLoadedEvent)
+       {
+  	en1 = fileLoadedEvent.target.result;	
+        //convert en1 from string into en int array
+    	var en=en1.split` `.map(x=>+x);		
+    
+    	i = 0;
+  	 while (i < en.length) 			
+   	{
+    	if (en[i] === 0) {
+    	  en.splice(i, 1);
+    	 } else {
+     	 ++i;
+     	   }
+  	}
+   	var pt,ct,k,j,temp,m=""; 
+   	 i=0;
+   	 while (i<en.length)
+       	{
+        temp=en[i]-96;
+        ct = temp;
+        k = 1;
+        for (j = 0; j < dekey; j++)
+        {
+            k = k * ct;
+            k = k % n;
+        }
+        pt = k + 96;
+        m+= String.fromCharCode(pt);
+        i++;       
+    	}
+    
+ 	var x=document.getElementById("output");
+    	x.innerHTML=m;
+        
+      };
+      fileReader.readAsText(fileToLoad, "UTF-8");
+     }
+    
+   else {
+    	var n,dekey,i;
+    	var en1=[];  //it is a constant string since reading from document
+	n=document.getElementById("n").value;
+    	dekey=document.getElementById("dekey").value;
+   	en1=document.getElementById("inputtxt").value;	   
+    
+    
+    
+    	var en=en1.split` `.map(x=>+x);		
+    
+    	i = 0;
+  	 while (i < en.length) 			
+  	 {
+   	 if (en[i] === 0) {
+    	  en.splice(i, 1);
+    	 } else {
+     	 ++i;
+    	 }
+  	 }
+  	 var pt,ct,k,j,temp,m=""; 
+    	i=0;
+   	 while (i<en.length)
+    	{
+        temp=en[i]-96;
+        ct = temp;
+        k = 1;
+        for (j = 0; j < dekey; j++)
+        {
+            k = k * ct;
+            k = k % n;
+        }
+        pt = k + 96;
+        m+= String.fromCharCode(pt);
+        i++;       
+       }
+    
+     var x=document.getElementById("output");
+     x.innerHTML=m;
+    }
+ }
+   </script> 
+   </div> 
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
