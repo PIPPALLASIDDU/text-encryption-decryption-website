@@ -1,0 +1,47 @@
+body{
+    margin: 6px;
+}
+.logo{
+    border-radius: 60%;
+    width: 200px;
+    height: 160px;
+    margin-left: 1em;
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.heading-section{
+    display: block;
+    margin: auto;
+}
+.heading{
+    font-family: 'Merriweather', serif;
+    font-size: 2.2rem;
+}
+.generatorText{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    font-weight: bolder;
+}
+.generateButton{
+    color: #f0ffff;
+    background-color: #1e90ff;
+    border-radius: 6px;
+    padding: 9px;
+    border-style: none;
+    text-decoration: none;
+}
+.encryptHeader,.encryptInfo{
+    text-align: center;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 800;
+}
+.encryptHeader{
+    font-size: 27px;
+}
+.encryptInfo{
+    font-size: 20px;
+}
