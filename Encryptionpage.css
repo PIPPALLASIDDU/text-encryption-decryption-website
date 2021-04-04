@@ -45,3 +45,10 @@ body{
 .encryptInfo{
     font-size: 20px;
 }
+ul{
+    list-style: none;
+    line-height: 2.7em;
+}
+.encryptButton{
+    margin-left: 40px;
+}
