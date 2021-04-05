@@ -27,6 +27,17 @@ body{
     font-family: 'Merriweather', serif;
     font-size: 2.2rem;
 }
+.decryptHeader,.decryptInfo{
+    text-align: center;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 800;
+}
+.decryptHeader{
+    font-size: 27px;
+}
+.decryptInfo{
+    font-size: 20px;
+}
 .generatorText{
     font-family: 'Poppins', sans-serif;
     font-size: 1.3em;
@@ -40,22 +51,11 @@ body{
     border-style: none;
     text-decoration: none;
 }
-.encryptHeader,.encryptInfo{
-    text-align: center;
-    font-family: 'Lexend', sans-serif;
-    font-weight: 800;
-}
-.encryptHeader{
-    font-size: 27px;
-}
-.encryptInfo{
-    font-size: 20px;
-}
 ul{
     list-style: none;
     line-height: 2.7em;
 }
-.encryptButton{
+.decryptButton{
     background-color:#dc143c;
     width: 12em;
 }

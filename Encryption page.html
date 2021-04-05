@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Encryption Page</title>
+    <title>Encryption</title>
     <link rel="stylesheet" href="./Encryptionpage.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="flex">
+    <div class="flex top-bar">
       <img src="https://i.imgur.com/UAeEKyX.jpg" alt="Logo" class="logo">
       <section class="heading-section">
         <h1 class="heading">Data Encryption</h1> 
@@ -37,13 +37,15 @@
             <li>
               <textarea  id="inputtxt" name="inputtext" rows="6" cols="50" placeholder="Enter your text here.."></textarea>
               <p>	     OR</p>
-              <input type="file" class="ml-2" id="inputfile" name="inputfile" />
+              <input type="file" id="inputfile" name="inputfile" />
+            </li>
+            <li>
+              <input type="button" value="Encrypt" onclick="" class="generateButton encryptButton"/>
             </li>
           </ul>
         </form>
       </div>
       <!-- Some Image ahs to be added to look attractive -->
     </section>
-    <input type="button" value="Encrypt" onclick="" class="generateButton encryptButton"/>
   </body>
 </html>
