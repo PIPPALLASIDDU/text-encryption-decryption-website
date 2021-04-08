@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet">
+    <script src="./Javascriptfiles/Encryption.js"></script>
   </head>
   <body>
     <div class="flex top-bar">
@@ -32,20 +33,29 @@
       <div>
         <form action="">
           <ul>
-            <li>Product of Primes(n): <input type="number"/></li>
-            <li>Encryption Key(Private key) e:<input type="number"/></li>
+            <li>Product of Primes(n): <input type="number" id="n" name="pop"/></li>
+            <li>Encryption Key(Private key) e:<input type="number" id="enkey" name="enckey"/></li>
             <li>
               <textarea  id="inputtxt" name="inputtext" rows="6" cols="50" placeholder="Enter your text here.."></textarea>
               <p>	     OR</p>
-              <input type="file" id="inputfile" name="inputfile" />
+              <input type="file" id="inputfile" name="inputfile"/>
             </li>
             <li>
-              <input type="button" value="Encrypt" onclick="" class="generateButton encryptButton"/>
+              <input type="button" value="Generate" class="generateButton encryptButton" onclick="generate();"/>
+              <b><p id="gnkey" style="font-size:1.3em"></p>
+              <p id="genkey" style="font-size:1.3em"></p>
+              <p id="gdekey" style="font-size:1.3em"></p></b>
+            </li>
+            <li>
+              <input type="button" value="Encrypt" class="generateButton encryptButton" onclick="encrypt();window.location.href = '#output';"/>
             </li>
           </ul>
         </form>
+        <h2>The Encrypted Text is</h2>
+	      <span id="output" class="enText"></span><button onclick="cpyFn()">&#128458;</button>
       </div>
       <!-- Some Image ahs to be added to look attractive -->
     </section>
+    <script src="./Javascriptfiles/CopyFunction.js"></script>
   </body>
 </html>

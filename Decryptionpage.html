@@ -9,6 +9,7 @@
     	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     	<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet">
 		<!-- Upto here -->
+		<script src="./Javascriptfiles/Decryption.js"></script>
 	</head>
 	<body>
 		<div class="flex top-bar">
@@ -27,18 +28,20 @@
 			<div>
 			  <form action="">
 				<ul>
-				  <li>Product of Primes(n): <input type="number"/></li>
-				  <li>Decryption Key(Public key) d:<input type="number"/></li>
+				  <li>Product of Primes(n): <input type="number" id="n" name="pop"/></li>
+				  <li>Decryption Key(Public key) d:<input type="number" id="dekey" name="deckey"/></li>
 				  <li>
 					<textarea  id="inputtxt" name="inputtext" rows="6" cols="50" placeholder="Enter your text here.."></textarea>
 					<p>	     OR</p>
 					<input type="file" id="inputfile" name="inputfile" />
 				  </li>
 				  <li>
-					<input type="button" value="Decrypt" onclick="" class="generateButton decryptButton"/>
+					<input type="button" value="Decrypt" onclick="decrypt();window.location.href = '#output';" class="generateButton decryptButton"/>
 				  </li>
 				</ul>
 			  </form>
+			  <h2>The Decrypted Text is</h2>
+			  <p id="output" style="font-size:1.3em"></p>
 			</div>
 			<!-- Some Image ahs to be added to look attractive -->
 		  </section>
