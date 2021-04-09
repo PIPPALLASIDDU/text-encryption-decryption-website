@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Decryption</title>
-    	<link rel="stylesheet" href="./CSSfiles/Decryptionpage.css">
-    	<link rel="preconnect" href="https://fonts.gstatic.com">
-		<!-- The coming three lines are different fonts -->
-    	<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
-    	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-    	<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet">
-		<!-- Upto here -->
-		<script src="./Javascriptfiles/Decryption.js"></script>
-	</head>
-	<body>
-		<div class="flex top-bar">
-			<img src="https://i.imgur.com/UAeEKyX.jpg" alt="Logo" class="logo">
-			<section class="heading-section">
-			  <h1 class="heading">Data Encryption</h1> 
-			  <i><h2>"Save your Privacy using your very own Encryption Tool"</h2></i>
-			</section>
-		  </div>
-		  <hr/>
-		  <div id="dataDecryptor">
-			<p class="decryptHeader">Data Decrypter</p>
-			<p class="decryptInfo">Enter your Encrypted Data or upload text file</p>
-		  </div>
-		  <section class="flex">
-			<div>
-			  <form action="">
+
+<head>
+	<title>Decryption</title>
+	<link rel="stylesheet" href="./CSSfiles/Decryptionpage.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<!-- The coming three lines are different fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet">
+	<!-- Upto here -->
+	<script src="./Javascriptfiles/Decryption.js"></script>
+</head>
+
+<body>
+	<div class="flex top-bar">
+		<img src="https://i.imgur.com/UAeEKyX.jpg" alt="Logo" class="logo">
+		<section class="heading-section">
+			<h1 class="heading">Data Encryption</h1>
+			<i>
+				<h2>"Save your Privacy using your very own Encryption Tool"</h2>
+			</i>
+		</section>
+	</div>
+	<hr />
+	<div id="dataDecryptor">
+		<p class="decryptHeader">Data Decrypter</p>
+		<p class="decryptInfo">Enter your Encrypted Data or upload text file</p>
+	</div>
+	<section class="flex">
+		<div>
+			<form action="">
 				<ul>
-				  <li>Product of Primes(n): <input type="number" id="n" name="pop"/></li>
-				  <li>Decryption Key(Public key) d:<input type="number" id="dekey" name="deckey"/></li>
-				  <li>
-					<textarea  id="inputtxt" name="inputtext" rows="6" cols="50" placeholder="Enter your text here.."></textarea>
-					<p>	     OR</p>
-					<input type="file" id="inputfile" name="inputfile" />
-				  </li>
-				  <li>
-					<input type="button" value="Decrypt" onclick="decrypt();window.location.href = '#output';" class="generateButton decryptButton"/>
-				  </li>
+					<li style="font-size:1.2em">Product of Primes(n): <input type="number" id="n" name="pop" /></li>
+					<li style="font-size:1.2em">Decryption Key(Public key) d:<input type="number" id="dekey"
+							name="deckey" /></li>
+					<br>
+					<li>
+						<textarea id="inputtxt" name="inputtext" rows="6" cols="50"
+							placeholder="Enter your text here.."></textarea>
+						<p> OR</p>
+						<input type="file" id="inputfile" name="inputfile" />
+					</li>
+					<li>
+						<input type="button" value="Decrypt" onclick="decrypt();window.location.href = '#output';"
+							class="generateButton decryptButton" />
+					</li>
 				</ul>
-			  </form>
-			  <h2>The Decrypted Text is</h2>
-			  <p id="output" style="font-size:1.3em"></p>
-			</div>
-			<!-- Some Image ahs to be added to look attractive -->
-		  </section>
-	</body>
+			</form>
+			<h2>The Decrypted Text is</h2>
+			<p id="output" style="font-size:1.2em"></p>
+		</div>
+		<!-- Some Image ahs to be added to look attractive -->
+	</section>
+</body>
+
 </html>
