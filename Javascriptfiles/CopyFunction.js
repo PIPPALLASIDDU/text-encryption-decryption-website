@@ -13,7 +13,7 @@ function cpyFn() {
   document.execCommand("copy");
 
   /* Alert the copied text */
-  alert("Copied the text: " + textArea.value);
+  alert("Copied the Encrypted Text ");
   textArea.remove();
 }
 
