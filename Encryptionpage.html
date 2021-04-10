@@ -1,108 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Encryption</title>
-    <link rel="stylesheet" href="./CSSfiles/Encryptionpage.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <script src="./Javascriptfiles/Encryption.js"></script>
-  </head>
 
-  <body>
-    <div class="flex top-bar">
-      <img src="https://i.imgur.com/UAeEKyX.jpg" alt="Logo" class="logo" />
-      <section class="heading-section">
-        <h1 class="heading">Data Encryption</h1>
-        <i>
-          <h2>"Save your Privacy using your very own Encryption Tool"</h2>
-        </i>
-      </section>
-    </div>
-    <hr />
+<head>
+  <title>Encryption</title>
+  <link rel="stylesheet" href="./CSSfiles/Encryptionpage.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet" />
+  <script src="./Javascriptfiles/Encryption.js"></script>
+</head>
+
+<body>
+  <div class="flex top-bar">
+    <img src="https://i.imgur.com/UAeEKyX.jpg" alt="Logo" class="logo" />
+    <section class="heading-section">
+      <h1 class="heading">Data Encryption</h1>
+      <i>
+        <h2>"Save your Privacy using your very own Encryption Tool"</h2>
+      </i>
+    </section>
+  </div>
+  <hr />
+  <div>
+    <span class="generatorText">Don't have Key?Generate key-value pair here &#9755;</span>
+    <input type="button" value="Generate" onclick="generate();" class="generateButton" />
+    <b>
+      <p id="gnkey" style="font-size: 1.3em"></p>
+      <p id="genkey" style="font-size: 1.3em"></p>
+      <p id="gdekey" style="font-size: 1.3em"></p>
+    </b>
+    <br />
+    <span class="generatorText">Already have the key!!</span>
+    <a href="#dataEncryptor" class="generateButton">Click here</a>
+  </div>
+  <div id="dataEncryptor">
+    <p class="encryptHeader">Data Encrypter</p>
+    <p class="encryptInfo">Enter your Encrypted Data or upload text file</p>
+  </div>
+  <section class="flex">
     <div>
-      <span class="generatorText"
-        >Don't have Key?Generate key-value pair here &#9755;</span
-      >
-      <input
-        type="button"
-        value="Generate"
-        onclick="generate();"
-        class="generateButton"
-      />
-      <b>
-        <p id="gnkey" style="font-size: 1.3em"></p>
-        <p id="genkey" style="font-size: 1.3em"></p>
-        <p id="gdekey" style="font-size: 1.3em"></p>
-      </b>
-      <br />
-      <span class="generatorText">Already have the key!!</span>
-      <a href="#dataEncryptor" class="generateButton">Click here</a>
-    </div>
-    <div id="dataEncryptor">
-      <p class="encryptHeader">Data Encrypter</p>
-      <p class="encryptInfo">Enter your Encrypted Data or upload text file</p>
-    </div>
-    <section class="flex">
-      <div>
-        <form action="">
-          <ul>
-            <li style="font-size: 1.2em">
-              Product of Primes(n): <input type="number" id="n" name="pop" />
-            </li>
-            <li style="font-size: 1.2em">
-              Encryption Key(Private key) e:<input
-                type="number"
-                id="enkey"
-                name="enckey"
-              />
-            </li>
-            <li>
-              <textarea
-                id="inputtxt"
-                name="inputtext"
-                rows="6"
-                cols="50"
-                placeholder="Enter your text here.."
-              ></textarea>
-              <p>OR</p>
-              <input type="file" id="inputfile" name="inputfile" />
-            </li>
-            <li>
-              <!-- <input type="button" value="Generate" class="generateButton encryptButton" onclick="generate();" />
+      <form action="">
+        <ul>
+          <li style="font-size: 1.2em">
+            Product of Primes(n): <input type="number" id="n" name="pop" />
+          </li>
+          <li style="font-size: 1.2em">
+            Encryption Key(Private key) e:<input type="number" id="enkey" name="enckey" />
+          </li>
+          <li>
+            <textarea id="inputtxt" name="inputtext" rows="6" cols="50" placeholder="Enter your text here.."></textarea>
+            <p>OR</p>
+            <input type="file" id="inputfile" name="inputfile" />
+          </li>
+          <li>
+            <!-- <input type="button" value="Generate" class="generateButton encryptButton" onclick="generate();" />
             <b>
               <p id="gnkey" style="font-size:1.3em"></p>
               <p id="genkey" style="font-size:1.3em"></p>
               <p id="gdekey" style="font-size:1.3em"></p>
             </b> -->
-            </li>
-            <li>
-              <input
-                type="button"
-                value="Encrypt"
-                class="generateButton encryptButton"
-                onclick="encrypt();window.location.href = '#output';"
-              />
-            </li>
-          </ul>
-        </form>
-        <h2>The Encrypted Text is</h2>
-        <span id="output" class="enText" ></span><button onclick="cpyFn()">
-          &#128458;
-        </button>
-      </div>
-      <!-- Some Image ahs to be added to look attractive -->
-    </section>
-    <script src="./Javascriptfiles/CopyFunction.js"></script>
-  </body>
+          </li>
+          <li>
+            <input type="button" value="Encrypt" class="generateButton encryptButton"
+              onclick="encrypt();window.location.href = '#outputhead';" />
+          </li>
+        </ul>
+      </form>
+      <h2 id="outputhead">The Encrypted Text is</h2>
+      <button title="Copy" onclick="cpyFn()">
+        &#128458;
+      </button>
+      <br>
+      <span id="output" class="enText" style="font-size: 1.1em"></span>
+    </div>
+    <!-- Some Image ahs to be added to look attractive -->
+  </section>
+  <script src="./Javascriptfiles/CopyFunction.js"></script>
+</body>
+
 </html>
