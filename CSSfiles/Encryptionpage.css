@@ -76,3 +76,10 @@ ul{
     border-radius: 7px;
     padding: 9px;
 }
+.copyButton{
+    border-radius: 3px;
+    border: none;
+    padding: 4px 6px;
+    background-color: #ffffffd3;
+    color: #4e4949;
+}
