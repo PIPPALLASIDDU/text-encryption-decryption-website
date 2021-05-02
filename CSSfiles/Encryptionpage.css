@@ -1,5 +1,5 @@
 body{
-    margin: 6px;
+    margin: 0;
     background-color: #fff8dc;
 }
 .logo{
@@ -53,7 +53,6 @@ body{
 }
 ul{
     list-style: none;
-    line-height: 2.7em;
 }
 .encryptButton{
     background-color:#dc143c;
@@ -65,4 +64,15 @@ ul{
     box-shadow: 0 0 3 1 rgba(#000000,#ffffff,#aeb8b8,0.9);
     border-radius: 4px;
     border: 1px dashed #2f4f4f;
+}
+.sectionBackground{
+    background-image: url("../Assets/markus-spiske-iar-afB0QQw-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #f0ffff;
+    padding: 18px;
+}
+.boxes{
+    border-radius: 7px;
+    padding: 9px;
 }

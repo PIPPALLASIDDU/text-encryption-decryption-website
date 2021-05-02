@@ -29,11 +29,11 @@
         </i>
       </section>
     </div>
-    <hr />
+  <section class="sectionBackground">
     <div>
-      <span class="generatorText"
-        >Don't have Key?Generate key-value pair here &#9755;</span
-      >
+      <span class="generatorText">
+        Don't have Key?Generate key-value pair here &#9755;
+      </span>
       <input
         type="button"
         value="Generate"
@@ -49,6 +49,7 @@
       <span class="generatorText">Already have the key!!</span>
       <a href="#dataEncryptor" class="generateButton">Click here</a>
     </div>
+  
     <div id="dataEncryptor">
       <p class="encryptHeader">Data Encrypter</p>
       <p class="encryptInfo">Enter your Encrypted Data or upload text file</p>
@@ -58,15 +59,18 @@
         <form action="">
           <ul>
             <li style="font-size: 1.2em">
-              Product of Primes(n): <input type="number" id="n" name="pop" />
+              Product of Primes(n): <input type="number" id="n" name="pop" class="boxes"/>
             </li>
+            <br/>
             <li style="font-size: 1.2em">
               Encryption Key(Private key) e:<input
                 type="number"
                 id="enkey"
                 name="enckey"
+                class="boxes"
               />
             </li>
+            <br/><br/>
             <li>
               <textarea
                 id="inputtxt"
@@ -74,10 +78,12 @@
                 rows="6"
                 cols="50"
                 placeholder="Enter your text here.."
+                class="boxes"
               ></textarea>
               <p>OR</p>
               <input type="file" id="inputfile" name="inputfile" />
             </li>
+            <br/>
             <li>
               <!-- <input type="button" value="Generate" class="generateButton encryptButton" onclick="generate();" />
             <b>
@@ -103,6 +109,7 @@
       </div>
       <!-- Some Image ahs to be added to look attractive -->
     </section>
+  </section>
     <script src="./Javascriptfiles/CopyFunction.js"></script>
   </body>
 </html>
