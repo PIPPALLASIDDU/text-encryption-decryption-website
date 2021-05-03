@@ -97,12 +97,16 @@
           </ul>
         </form>
         <h2>The Encrypted Text is</h2>
-        <span id="output" class="enText" ></span><button onclick="cpyFn()">
-          &#128458;
-        </button>
+        <span id="output" class="enText"></span
+        ><button onclick="cpyFn()">&#128458;</button>
+        <p>Do you want to send this encrypted text in Telegram?</p>
+        <label>Enter your Telegram username</label>
+        <input type="text" id="telegram-username-input" />
+        <a href="#" id="open-telegram">Open Telegram</a>
       </div>
       <!-- Some Image ahs to be added to look attractive -->
     </section>
+    <script src="./Javascriptfiles/Encryption.js"></script>
     <script src="./Javascriptfiles/CopyFunction.js"></script>
   </body>
 </html>

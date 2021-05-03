@@ -1,7 +1,16 @@
 function encrypt() {
-  if (document.getElementById("inputfile").files.length != 0)			//for file
-  {
-    var n, enkey, m, i, pt, ct, k, len, j, en1 = [];
+  if (document.getElementById("inputfile").files.length != 0) {
+    //for file
+    var n,
+      enkey,
+      m,
+      i,
+      pt,
+      ct,
+      k,
+      len,
+      j,
+      en1 = [];
     var en = "";
     n = document.getElementById("n").value;
     enkey = document.getElementById("enkey").value;
@@ -10,8 +19,11 @@ function encrypt() {
     var fileReader = new FileReader();
     fileReader.onload = function (fileLoadedEvent) {
       m = fileLoadedEvent.target.result;
-      for (i = 0; i < m.length; i++)			//to convert m from char to int array
-      {
+      for (
+        i = 0;
+        i < m.length;
+        i++ //to convert m from char to int array
+      ) {
         en1[i] = m.charCodeAt(i);
       }
       i = 0;
@@ -31,17 +43,27 @@ function encrypt() {
       x.innerHTML = en;
     };
     fileReader.readAsText(fileToLoad, "UTF-8");
-  }
-
-  else {
-    var n, enkey, m, i, pt, ct, k, len, j, en1 = [];
+  } else {
+    var n,
+      enkey,
+      m,
+      i,
+      pt,
+      ct,
+      k,
+      len,
+      j,
+      en1 = [];
     var en = "";
     n = document.getElementById("n").value;
     enkey = document.getElementById("enkey").value;
-    m = document.getElementById("inputtxt").value;	   //input as string
+    m = document.getElementById("inputtxt").value; //input as string
 
-    for (i = 0; i < m.length; i++)			//to convert m from char to int array
-    {
+    for (
+      i = 0;
+      i < m.length;
+      i++ //to convert m from char to int array
+    ) {
       en1[i] = m.charCodeAt(i);
     }
     i = 0;
@@ -62,17 +84,26 @@ function encrypt() {
   }
 }
 
-
 function generate() {
-  var p, q, n, t, k, flag, e = [], d = [], j, i, enckey, deckey;
+  var p,
+    q,
+    n,
+    t,
+    k,
+    flag,
+    e = [],
+    d = [],
+    j,
+    i,
+    enckey,
+    deckey;
   p = primegenerator(75, 200);
   q = primegenerator(73, 205);
   n = p * q;
   t = (p - 1) * (q - 1);
   k = 0;
   for (i = 2; i < t; i++) {
-    if (t % i == 0)
-      continue;
+    if (t % i == 0) continue;
     flag = prime(i, j);
     if (flag == 1 && i != p && i != q) {
       e[k] = i;
@@ -81,8 +112,7 @@ function generate() {
         d[k] = flag;
         k++;
       }
-      if (k == 99)
-        break;
+      if (k == 99) break;
     }
   }
 
@@ -94,9 +124,12 @@ function generate() {
   document.getElementById("gdekey").innerHTML = "Decryption key d:" + deckey;
 }
 
-
 function primegenerator(low, high) {
-  var primearr = [], i, j = 0, flag = 0, secret;
+  var primearr = [],
+    i,
+    j = 0,
+    flag = 0,
+    secret;
 
   while (low < high) {
     flag = 0;
@@ -113,11 +146,10 @@ function primegenerator(low, high) {
     ++low;
   }
 
-  secret = rand() % (j);
+  secret = rand() % j;
 
-  return (primearr[secret]);
+  return primearr[secret];
 }
-
 
 function rand(min = 0, max = 32767) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -127,8 +159,7 @@ function prime(pr, j) {
   var i;
   j = Math.sqrt(pr);
   for (i = 2; i <= j; i++) {
-    if (pr % i == 0)
-      return 0;
+    if (pr % i == 0) return 0;
   }
   return 1;
 }
@@ -137,6 +168,17 @@ function cd(x, t) {
   var k = 1;
   while (1) {
     k = k + t;
-    if (k % x == 0) return (k / x);
+    if (k % x == 0) return k / x;
   }
+}
+
+var telegramUsernameInput = document.getElementById("telegram-username-input");
+console.log(telegramUsernameInput);
+telegramUsernameInput.addEventListener("input", telegramIntegration);
+
+function telegramIntegration(e) {
+  e.preventDefault();
+  var telegramUsername = e.target.value;
+  var openTelegram = document.getElementById("open-telegram");
+  openTelegram.href = `https://telegram.me/${telegramUsername}`;
 }
