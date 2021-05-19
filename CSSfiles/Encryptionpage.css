@@ -59,7 +59,8 @@ ul{
 }
 .enText{
     font-size:1.3em;
-    background-color: #d3d3d3;
+    background-color: #000;
+    color: #ffffff;
     box-shadow: 0 0 3 1 rgba(#000000,#ffffff,#aeb8b8,0.9);
     border-radius: 4px;
     border: 1px dashed #2f4f4f;
@@ -81,4 +82,7 @@ ul{
     padding: 4px 6px;
     background-color: #ffffffd3;
     color: #4e4949;
+}
+#open-telegram{
+    color: #fff;
 }
